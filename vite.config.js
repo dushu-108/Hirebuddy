@@ -9,10 +9,25 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: process.env.PORT || 5173,
-    strictPort: true
+    strictPort: true,
+    hmr: {
+      host: 'hirebuddy-pv9i.onrender.com',
+      protocol: 'wss',
+      port: 443
+    },
+    allowedHosts: [
+      'hirebuddy-pv9i.onrender.com',
+      'localhost'
+    ]
   },
   preview: {
     port: process.env.PORT || 5173,
-    strictPort: true
+    strictPort: true,
+    host: '0.0.0.0',
+    hmr: {
+      host: 'hirebuddy-pv9i.onrender.com',
+      protocol: 'wss',
+      port: 443
+    }
   }
 })
